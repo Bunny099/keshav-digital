@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import Hero from "@/app/components/ui/Hero";
 import Offering from "@/app/components/ui/Offering";
@@ -7,22 +7,17 @@ import Testimonial from "@/app/components/ui/Testimonial";
 import Contact from "@/app/components/ui/Contact";
 import Form from "@/app/components/ui/Form";
 
-
-import LandingLayout from "@/app/landing/layout"
+import LandingLayout from "@/app/landing/layout";
 
 export default function Home() {
-  return <main className="">
+  return (
     <LandingLayout>
-    <Hero/>
-    <Offering/>
-    <Gallery/>
-    <Testimonial/>
-    <Contact/>
-    <Form/>
+      <Hero />
+      <Offering />
+      <Gallery />
+      <Testimonial />
+      <Contact />
+      <Form />
     </LandingLayout>
-    
-    
-    
-
-  </main>
+  );
 }

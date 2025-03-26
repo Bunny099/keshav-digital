@@ -3,7 +3,9 @@ import TestimonialCard from "@/app/components/ui/Testimonialcard";
 export default function Testimonial() {
   return (
     <div className="flex flex-col items-center px-6">
-      <h1 className="text-blue-900 text-xl font-semibold pt-20">TESTIMONIALS</h1>
+      <h1 className="text-blue-900 text-xl font-semibold pt-20">
+        TESTIMONIALS
+      </h1>
       <h1 className="text-3xl sm:text-4xl font-bold border-b-[5px] pt-4 pb-2 border-blue-900">
         What Our Clients Think
       </h1>

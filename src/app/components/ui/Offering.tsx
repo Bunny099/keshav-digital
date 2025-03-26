@@ -3,7 +3,6 @@ import Card from "@/app/components/ui/Card";
 export default function Offering() {
   return (
     <div>
-      {/* Background Section */}
       <div
         className="relative  bg-center bg-cover h-[400px] sm:h-[500px] lg:h-[550px] w-full mt-16"
         style={{ backgroundImage: "url(/images/offeringbg.avif)" }}
@@ -23,7 +22,6 @@ export default function Offering() {
         </div>
       </div>
 
-      {/* Cards Section */}
       <div className="flex justify-center mt-10 px-4 sm:px-8 pb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
           <Card
