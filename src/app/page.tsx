@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Hero from "@/app/components/ui/Hero";
 import Offering from "@/app/components/ui/Offering";
 import Gallery from "@/app/components/ui//Gallery";

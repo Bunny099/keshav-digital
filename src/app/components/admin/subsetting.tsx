@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import { useState } from "react";
-import { FiMail, FiLock, FiUser } from "react-icons/fi";
+import { FiMail, FiLock } from "react-icons/fi";
 export default function SubAdminSetting() {
   const [rootEmail, setRootEmail] = useState<string>("");
   const [subEmail, setSubEmail] = useState<string>("");
@@ -30,6 +30,7 @@ export default function SubAdminSetting() {
       setError(
         "Failed to changed  subadmin password. Check your root email and password."
       );
+      console.error(error)
     } finally {
       setLoading(false);
     }

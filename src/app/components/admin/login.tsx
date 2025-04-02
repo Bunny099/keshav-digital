@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { FiMail, FiLock, FiUser } from "react-icons/fi";
-
+import Image from "next/image";
 export default function Login() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -32,10 +32,15 @@ export default function Login() {
       <div className="min-h-screen flex items-center justify-center ">
         <div className="bg-white p-8 rounded-3xl shadow-xl flex items-center gap-6 w-[850px] max-w-full">
           <div className="hidden md:block w-1/2">
-            <img
+
+           
+            <Image
               src="/images/adminbg.jpg"
               alt="Admin Login"
-              className="rounded-3xl w-full"
+              width={500} 
+              height={500} 
+              className="rounded-3xl w-full h-auto"
+              priority 
             />
           </div>
           <div className="w-full md:w-1/2">

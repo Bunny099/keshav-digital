@@ -1,4 +1,3 @@
-import NextAuth from "next-auth";
 import  CredentialsProvider  from "next-auth/providers/credentials";
 import { AuthOptions } from "next-auth";
 import { JWT } from "next-auth/jwt";
@@ -14,7 +13,7 @@ export const authOptions:AuthOptions={
                 password:{},
                 role:{}
             },
-            async authorize(credentials, req) {
+            async authorize(credentials) {
                 if(!credentials?.email || !credentials.password){
                     throw new Error("Missing email or password")
                 }
