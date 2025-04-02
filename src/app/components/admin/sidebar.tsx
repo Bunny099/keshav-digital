@@ -1,7 +1,7 @@
 "use client"
 import { useRouter } from "next/navigation";
 import LogoutBtn from "./logout";
-import { CiHome, CiSettings, CiUser, CiLogout, CiViewTable, CiMenuBurger } from "react-icons/ci";
+import { CiHome, CiSettings,CiViewTable} from "react-icons/ci";
 export default function Sidebar() {
     const router = useRouter()
   const menuItems = [

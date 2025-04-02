@@ -2,12 +2,11 @@
 import { prisma } from "@/lib/db";
 import bcrypt from "bcryptjs";
 import { NextRequest, NextResponse } from "next/server";
-
 export async function GET(req: NextRequest) {
     try {
         const allAdmins = await prisma.admin.findMany();
-        const subAdmins = await prisma.admin.count({where:{role:"sub"}})
-        return NextResponse.json({ admins: allAdmins,subAdmins }, { status: 200 })
+        const subAdmins = await prisma.admin.count({ where: { role: "sub" } })
+        return NextResponse.json({ admins: allAdmins, subAdmins }, { status: 200 })
     } catch (error) {
         return NextResponse.json({ error: "error while geting admin data" }, { status: 400 })
     }

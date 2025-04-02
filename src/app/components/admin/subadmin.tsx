@@ -1,14 +1,11 @@
-
 "use client";
-
 import axios from "axios";
-import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
-import { FiMail, FiLock, FiUser } from "react-icons/fi";
+import { FiMail, FiLock } from "react-icons/fi";
 export default function AddingSubAdmin() {
   const [rootEmail, setRootEmail] = useState<string>("");
   const [subEmail, setSubEmail] = useState<string>("");
-  
+
   const [subPassword, setSubPassword] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -23,8 +20,6 @@ export default function AddingSubAdmin() {
         rootEmail,
         subEmail,
         subPassword,
-       
-        
       });
       console.log(result.data.subAdmin);
       if (result.data.subAdmin) {
@@ -32,9 +27,10 @@ export default function AddingSubAdmin() {
       } else {
         setError("Something went wrong. Please try again!");
       }
-    } catch (error:any) {
+    } catch (error: any) {
       setError(
-        error.response?.data?.error || "Failed to create sub-admin. Please try again."
+        error.response?.data?.error ||
+          "Failed to create sub-admin. Please try again."
       );
     } finally {
       setLoading(false);
@@ -43,9 +39,7 @@ export default function AddingSubAdmin() {
 
   return (
     <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-     
       <form className="space-y-4" onSubmit={addSubAdmin}>
-       
         <div className="relative">
           <FiMail className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -70,7 +64,6 @@ export default function AddingSubAdmin() {
           />
         </div>
 
-       
         <div className="relative">
           <FiLock className="absolute left-3 top-4 text-gray-500" />
           <input

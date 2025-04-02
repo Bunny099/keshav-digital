@@ -1,5 +1,4 @@
 "use client";
-
 import axios from "axios";
 import { useState } from "react";
 import { FiMail, FiLock } from "react-icons/fi";
@@ -41,9 +40,7 @@ export default function RootAdminSetting() {
 
   return (
     <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-     
       <form className="space-y-4" onSubmit={changeCreds}>
-       
         <div className="relative">
           <FiMail className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -56,7 +53,6 @@ export default function RootAdminSetting() {
           />
         </div>
 
-       
         <div className="relative">
           <FiLock className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -69,7 +65,6 @@ export default function RootAdminSetting() {
           />
         </div>
 
-      
         <div className="relative">
           <FiMail className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -82,7 +77,6 @@ export default function RootAdminSetting() {
           />
         </div>
 
-        
         <div className="relative">
           <FiLock className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -95,11 +89,9 @@ export default function RootAdminSetting() {
           />
         </div>
 
-      
         {error && <p className="text-red-600 text-center">{error}</p>}
         {message && <p className="text-green-600 text-center">{message}</p>}
 
-       
         <button
           className="bg-black text-white w-full py-3 rounded-lg hover:bg-gray-800 transition-all disabled:opacity-50"
           type="submit"

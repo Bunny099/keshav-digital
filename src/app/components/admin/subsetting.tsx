@@ -1,14 +1,10 @@
-
 "use client";
-
 import axios from "axios";
-import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
 import { FiMail, FiLock, FiUser } from "react-icons/fi";
 export default function SubAdminSetting() {
   const [rootEmail, setRootEmail] = useState<string>("");
   const [subEmail, setSubEmail] = useState<string>("");
-  
   const [newPassword, setNewPassword] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -22,8 +18,7 @@ export default function SubAdminSetting() {
       const result = await axios.put("/api/updateadmin", {
         rootEmail: rootEmail,
         newPassword: newPassword,
-        subEmail:subEmail,
-        
+        subEmail: subEmail,
       });
       console.log(result.data.updatedSubAdmin);
       if (result.data.updatedSubAdmin) {
@@ -42,9 +37,7 @@ export default function SubAdminSetting() {
 
   return (
     <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-     
       <form className="space-y-4" onSubmit={changeCred}>
-       
         <div className="relative">
           <FiMail className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -55,7 +48,7 @@ export default function SubAdminSetting() {
             placeholder="Enter Your Root Email"
             required
           />
-        </div>       
+        </div>
         <div className="relative">
           <FiMail className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -68,7 +61,6 @@ export default function SubAdminSetting() {
           />
         </div>
 
-       
         <div className="relative">
           <FiLock className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -81,11 +73,9 @@ export default function SubAdminSetting() {
           />
         </div>
 
-        {/* Status Messages */}
         {error && <p className="text-red-600 text-center">{error}</p>}
         {message && <p className="text-green-600 text-center">{message}</p>}
 
-        {/* Submit Button */}
         <button
           className="bg-black text-white w-full py-3 rounded-lg hover:bg-gray-800 transition-all disabled:opacity-50"
           type="submit"
