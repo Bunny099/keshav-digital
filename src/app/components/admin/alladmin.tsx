@@ -32,7 +32,7 @@ export default function DashboardContent(){
                     console.error("Unexpected API response format:", data);
                 }
             }catch(error){
-                console.log("Error while geting sub admins")
+                console.error(error,"Error while geting sub admins")
             }
            
             

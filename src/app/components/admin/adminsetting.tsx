@@ -33,6 +33,7 @@ export default function RootAdminSetting() {
       setError(
         "Failed to update credentials. Check your old email and password."
       );
+      console.error(error)
     } finally {
       setLoading(false);
     }
