@@ -5,6 +5,8 @@ import { Session } from "next-auth";
 import {prisma} from "./db"
 import bcrypt from "bcryptjs";
 
+
+
 export const authOptions:AuthOptions={
     providers:[
         CredentialsProvider({
