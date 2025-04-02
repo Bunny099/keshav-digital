@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { redirect } from "next/navigation";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,6 +37,7 @@ export default function Navbar() {
                   {isAdminLoginVisible && (
                     <button
                       onClick={() => setAdminLoginVisible(false)}
+                      onClickCapture={()=>{redirect("/admin")}}
                       className="block w-full text-left px-4 py-2 hover:bg-gray-200"
                     >
                       Admin Login

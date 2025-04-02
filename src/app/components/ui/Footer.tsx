@@ -1,4 +1,5 @@
 import Icons from "@/app/components/ui/Icons";
+import { redirect } from "next/navigation";
 
 export default function Footer() {
   return (
@@ -32,7 +33,7 @@ export default function Footer() {
             <li className="font-light hover:text-blue-400 cursor-pointer">
               Contact
             </li>
-            <li className="font-light hover:text-blue-400 cursor-pointer">
+            <li onClick={()=>redirect("/admin")} className="font-light hover:text-blue-400 cursor-pointer">
               Admin Login
             </li>
           </ul>

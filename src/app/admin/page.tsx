@@ -1,9 +1,14 @@
-import AdminLayout from "./layout";
+"use client";
+import { useRouter, redirect } from "next/navigation";
+import Login from "../components/admin/login";
 
-export default function AdminDashboard() {
+export default function Admin() {
+  const router = useRouter();
   return (
-    <AdminLayout>
-      <h1 className="text-2xl font-bold">Welcome to Admin Dashboard</h1>
-    </AdminLayout>
+    <div className="flex flex-col  min-h-screen w-full">
+      <div>
+        <Login />
+      </div>
+    </div>
   );
 }

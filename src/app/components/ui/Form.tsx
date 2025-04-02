@@ -2,15 +2,24 @@
 import { useState } from "react";
 import Icons from "@/app/components/ui/Icons";
 import Button from "@/app/components/ui/Button";
-
+import axios from "axios"
 export default function Form() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [mobile, setMobile] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [error,setError] = useState<string | null>(null)
 
   async function submitForm() {
-    console.log("Form Data:", { name, email, number, message });
+    console.log("Form Data:", { name, email, mobile, message });
+    const result = await axios.post("/api/inquiry",{name,email,mobile,message});
+    if(!result){
+      setError("inquiry failed");
+      console.log(error)
+
+    }else{
+      console.log(result.data.inquiries)
+    }
   }
 
   return (
@@ -47,6 +56,7 @@ export default function Form() {
         </div>
 
         <div className="p-6 md:p-8 w-full">
+          <form onSubmit={submitForm} >
           <label className="text-base sm:text-lg font-semibold">
             Your Name
           </label>
@@ -55,6 +65,8 @@ export default function Form() {
             onChange={(e) => setName(e.target.value)}
             type="text"
             placeholder="Enter your name"
+            value={name}
+            required
           />
 
           <label className="text-base sm:text-lg font-semibold mt-4">
@@ -65,6 +77,8 @@ export default function Form() {
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Enter your email"
+            value={email}
+            required
           />
 
           <label className="text-base sm:text-lg font-semibold mt-4">
@@ -72,9 +86,11 @@ export default function Form() {
           </label>
           <input
             className="py-2 px-3 w-full outline-none bg-blue-100 rounded-md focus:ring-2 focus:ring-blue-600"
-            onChange={(e) => setNumber(e.target.value)}
+            onChange={(e) => setMobile(e.target.value)}
             type="tel"
             placeholder="Enter your number"
+            value={mobile}
+            required
           />
 
           <label className="text-base sm:text-lg font-semibold mt-4">
@@ -84,11 +100,17 @@ export default function Form() {
             className="py-2 px-3 w-full h-[150px] outline-none bg-blue-100 rounded-md resize-none focus:ring-2 focus:ring-blue-600"
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Write your message here..."
+            value={message}
+            required
           ></textarea>
 
+           {error && <p className="text-red-500 text-center bg-red-100 p-2 rounded-md">{error}</p>}
+
           <div className="mt-6">
-            <Button onClick={submitForm} text="Send Inquiry" type="primary" />
+           
+            <button className="text-white bg-blue-900 py-2 px-4 rounded-lg text-xl" type="submit">Send Inquiry</button>
           </div>
+          </form>
         </div>
       </div>
     </div>
