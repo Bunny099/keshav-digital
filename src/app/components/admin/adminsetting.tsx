@@ -1,9 +1,8 @@
 "use client";
 
 import axios from "axios";
-import { redirect, useRouter } from "next/navigation";
 import { useState } from "react";
-import { FiMail, FiLock, FiUser } from "react-icons/fi";
+import { FiMail, FiLock } from "react-icons/fi";
 export default function RootAdminSetting() {
   const [oldEmail, setOldEmail] = useState<string>("");
   const [oldPassword, setOldPassword] = useState<string>("");
@@ -12,6 +11,7 @@ export default function RootAdminSetting() {
   const [message, setMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
+
   async function changeCreds(e: React.FormEvent) {
     e.preventDefault();
     setMessage("");
@@ -41,9 +41,9 @@ export default function RootAdminSetting() {
 
   return (
     <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-      {/* Form */}
+     
       <form className="space-y-4" onSubmit={changeCreds}>
-        {/* Old Email */}
+       
         <div className="relative">
           <FiMail className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -56,7 +56,7 @@ export default function RootAdminSetting() {
           />
         </div>
 
-        {/* Old Password */}
+       
         <div className="relative">
           <FiLock className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -69,7 +69,7 @@ export default function RootAdminSetting() {
           />
         </div>
 
-        {/* New Email */}
+      
         <div className="relative">
           <FiMail className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -82,7 +82,7 @@ export default function RootAdminSetting() {
           />
         </div>
 
-        {/* New Password */}
+        
         <div className="relative">
           <FiLock className="absolute left-3 top-4 text-gray-500" />
           <input
@@ -95,11 +95,11 @@ export default function RootAdminSetting() {
           />
         </div>
 
-        {/* Status Messages */}
+      
         {error && <p className="text-red-600 text-center">{error}</p>}
         {message && <p className="text-green-600 text-center">{message}</p>}
 
-        {/* Submit Button */}
+       
         <button
           className="bg-black text-white w-full py-3 rounded-lg hover:bg-gray-800 transition-all disabled:opacity-50"
           type="submit"
