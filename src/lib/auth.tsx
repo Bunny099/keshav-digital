@@ -26,7 +26,7 @@ export const authOptions:AuthOptions={
                 if(!corretPass){
                     throw new Error("Invalid email or password")
                 }
-                console.log("user Db:",user)
+               
                 return {id:user.id, email:user.email, role:user.role}
             },
 
@@ -42,7 +42,7 @@ export const authOptions:AuthOptions={
                 token.role = user.role
 
             }
-            console.log("token",token)
+          
             return token
         },
         async session({session,token}:{session:Session;token:JWT}){
@@ -51,7 +51,7 @@ export const authOptions:AuthOptions={
                 session.user.email = token.email;
                 session.user.role = token.role as string
             }
-            console.log("sesion:",session)
+           
             return session;
         }
     }
