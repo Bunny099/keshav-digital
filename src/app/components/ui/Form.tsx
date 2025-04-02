@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Icons from "@/app/components/ui/Icons";
-import Button from "@/app/components/ui/Button";
+
 import axios from "axios"
 export default function Form() {
   const [name, setName] = useState<string>("");

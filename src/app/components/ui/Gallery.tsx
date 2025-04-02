@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function Gallery() {
   return (
     <div className="bg-blue-100 px-4 mt-9 min-h-screen flex flex-col text-center items-center">
@@ -19,10 +20,12 @@ export default function Gallery() {
             key={index}
             className="group relative overflow-hidden rounded-lg shadow-md"
           >
-            <img
-              className="w-full h-auto transform transition-all duration-500 ease-in-out group-hover:scale-105"
+             <Image
               src={src}
               alt={`Gallery ${index + 1}`}
+              width={400}
+              height={300} 
+              className="w-full h-auto transform transition-all duration-500 ease-in-out group-hover:scale-105"
             />
           </div>
         ))}

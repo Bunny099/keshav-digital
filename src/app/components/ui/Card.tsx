@@ -1,3 +1,4 @@
+import Image from "next/image";
 interface CardProps {
   image: string;
   heading: string;
@@ -13,13 +14,16 @@ export default function Card({ image, heading, description, type }: CardProps) {
           : "shadow-none"
       }  `}
     >
-      <img
+       <Image
+        src={image}
+        alt={heading}
+        width={50} 
+        height={50} 
         className={`${
           type === "primary"
             ? "bg-blue-900 w-[50px] rounded-4xl p-2"
             : "p-2 w-[50px]"
         }`}
-        src={image}
       />
       <h1
         className={`text-2xl font-semibold pt-2 ${

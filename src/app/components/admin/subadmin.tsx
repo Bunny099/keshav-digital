@@ -32,6 +32,7 @@ export default function AddingSubAdmin() {
         error.response?.data?.error ||
           "Failed to create sub-admin. Please try again."
       );
+      console.error(error)
     } finally {
       setLoading(false);
     }

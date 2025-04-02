@@ -36,8 +36,8 @@ export default function Navbar() {
                 <div className="absolute top-full left-0 bg-blue-50 shadow-xl rounded-md w-40 mt-2 z-50">
                   {isAdminLoginVisible && (
                     <button
-                      onClick={() => setAdminLoginVisible(false)}
-                      onClickCapture={()=>{redirect("/admin")}}
+                      onClick={() => {setAdminLoginVisible(false);redirect("/admin")}}
+                    
                       className="block w-full text-left px-4 py-2 hover:bg-gray-200"
                     >
                       Admin Login
@@ -90,7 +90,7 @@ export default function Navbar() {
               <div className="bg-gray-100">
                 {isAdminLoginVisible && (
                   <button
-                    onClick={() => setAdminLoginVisible(false)}
+                    onClick={() => {setAdminLoginVisible(false);redirect("/admin")}}
                     className="block w-full text-left px-6 py-2"
                   >
                     Admin Login

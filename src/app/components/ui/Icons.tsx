@@ -1,3 +1,4 @@
+import Image from "next/image";
 interface IconsProps {
   icon: string;
   name?: string;
@@ -7,12 +8,14 @@ interface IconsProps {
 export default function Icons({ icon, name, type, className }: IconsProps) {
   return (
     <div className="flex pt-2 items-center gap-3">
-      <img
-        className={`h-8 w-8 ${
-          type === "secondary" ? "  bg-white rounded-2xl p-1 " : ""
-        }`}
+       <Image
         src={icon}
-        alt="1"
+        alt={name || "icon"}
+        width={32} 
+        height={32} 
+        className={`h-8 w-8 ${
+          type === "secondary" ? "bg-white rounded-2xl p-1" : ""
+        }`}
       />
       <p
         className={`${className} ${
