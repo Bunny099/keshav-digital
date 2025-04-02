@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 import { prisma } from "@/lib/db";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
     try {
         const inquiries = await prisma.inquiries.findMany();
         const totalInquiries = await prisma.inquiries.count();

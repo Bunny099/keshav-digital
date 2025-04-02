@@ -2,7 +2,7 @@
 import { prisma } from "@/lib/db";
 import bcrypt from "bcryptjs";
 import { NextRequest, NextResponse } from "next/server";
-export async function GET(req: NextRequest) {
+export async function GET() {
     try {
         const allAdmins = await prisma.admin.findMany();
         const subAdmins = await prisma.admin.count({ where: { role: "sub" } })
