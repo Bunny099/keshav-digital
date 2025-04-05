@@ -25,7 +25,12 @@ export default function Form() {
     }
 
     try {
-      const { data } = await axios.post("/api/inquiry", { name, email, mobile, message });
+      const { data } = await axios.post("/api/inquiry", {
+        name,
+        email,
+        mobile,
+        message,
+      });
       setSuccess("Inquiry sent successfully!");
       setName("");
       setEmail("");
@@ -52,17 +57,37 @@ export default function Form() {
               Get Our Contact Information
             </h1>
             <div className="mt-3 space-y-2">
-              <Icons type="primary" icon="./icons/call.svg" name="9265646507" />
-              <Icons type="primary" icon="./icons/email.svg" name="keshavdigital@gmail.com" />
-              <Icons type="primary" icon="./icons/location.svg" name="456, Textile St. Surat, India" />
-              <Icons type="primary" icon="./icons/time.svg" name="Mon-Fri: 9:00 AM - 5:00 PM" />
+              <Icons
+                type="primary"
+                icon="./icons/call.svg"
+                name="9909897030"
+                link="tel:9909897030"
+              />
+              <Icons
+                type="primary"
+                icon="./icons/email.svg"
+                name="k.digital178@gmail.com"
+                link="mailto:k.digital178@gmail.com"
+              />
+              <Icons
+                type="primary"
+                icon="./icons/location.svg"
+                name="178 HARIOM IND.2, VADOD,BAMROLI,SURAT,395023"
+              />
+              <Icons
+                type="primary"
+                icon="./icons/time.svg"
+                name="Mon-Fri: 9:00 AM - 5:00 PM"
+              />
             </div>
           </div>
         </div>
 
         <div className="p-6 md:p-8 w-full">
           <form onSubmit={submitForm}>
-            <label className="text-base sm:text-lg font-semibold">Your Name</label>
+            <label className="text-base sm:text-lg font-semibold">
+              Your Name
+            </label>
             <input
               className="py-2 px-3 w-full outline-none bg-blue-100 rounded-md focus:ring-2 focus:ring-blue-600"
               onChange={(e) => setName(e.target.value)}
@@ -72,7 +97,9 @@ export default function Form() {
               required
             />
 
-            <label className="text-base sm:text-lg font-semibold mt-4">Your Email</label>
+            <label className="text-base sm:text-lg font-semibold mt-4">
+              Your Email
+            </label>
             <input
               className="py-2 px-3 w-full outline-none bg-blue-100 rounded-md focus:ring-2 focus:ring-blue-600"
               onChange={(e) => setEmail(e.target.value)}
@@ -82,7 +109,9 @@ export default function Form() {
               required
             />
 
-            <label className="text-base sm:text-lg font-semibold mt-4">Your Number</label>
+            <label className="text-base sm:text-lg font-semibold mt-4">
+              Your Number
+            </label>
             <input
               className="py-2 px-3 w-full outline-none bg-blue-100 rounded-md focus:ring-2 focus:ring-blue-600"
               onChange={(e) => setMobile(e.target.value)}
@@ -92,7 +121,9 @@ export default function Form() {
               required
             />
 
-            <label className="text-base sm:text-lg font-semibold mt-4">Your Message</label>
+            <label className="text-base sm:text-lg font-semibold mt-4">
+              Your Message
+            </label>
             <textarea
               className="py-2 px-3 w-full h-[150px] outline-none bg-blue-100 rounded-md resize-none focus:ring-2 focus:ring-blue-600"
               onChange={(e) => setMessage(e.target.value)}
@@ -101,8 +132,16 @@ export default function Form() {
               required
             ></textarea>
 
-            {error && <p className="text-red-500 text-center bg-red-100 p-2 rounded-md">{error}</p>}
-            {success && <p className="text-green-500 text-center bg-green-100 p-2 rounded-md">{success}</p>}
+            {error && (
+              <p className="text-red-500 text-center bg-red-100 p-2 rounded-md">
+                {error}
+              </p>
+            )}
+            {success && (
+              <p className="text-green-500 text-center bg-green-100 p-2 rounded-md">
+                {success}
+              </p>
+            )}
 
             <div className="mt-6">
               <button

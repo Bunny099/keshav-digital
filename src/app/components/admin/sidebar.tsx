@@ -1,12 +1,15 @@
-"use client"
-import { useRouter } from "next/navigation";
+"use client";
 import LogoutBtn from "./logout";
-import { CiHome, CiSettings,CiViewTable} from "react-icons/ci";
+import { useRouter } from "next/navigation";
+import { CiHome, CiSettings,CiViewTable,CiShoppingCart} from "react-icons/ci";
 export default function Sidebar() {
     const router = useRouter()
   const menuItems = [
     { name: "Home", icon:<CiHome size={24}/>, link: "/admin/dashboard" },
     { name: "Table",icon:<CiViewTable size={24}/>, link: "/admin/dashboard/table" },
+    
+    { name: "Products", icon: <CiShoppingCart size={24} />, link: "/admin/dashboard/products" },
+    { name: "Product Table",icon:<CiViewTable size={24}/>, link: "/admin/dashboard/producttable" },
     { name: "Settings",icon:<CiSettings size={24}/> ,link: "/admin/dashboard/settings" },
   ];
   return <div>

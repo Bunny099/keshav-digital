@@ -1,5 +1,3 @@
-
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,24 +7,38 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Inquiries{
-  id   Int @id @default(autoincrement())
-  name String
-  email String 
-  mobile String
-  message String
+model Inquiries {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  mobile    String
+  message   String
   createdAt DateTime @default(now())
 }
-enum Role{
+
+enum Role {
   root
   sub
 }
 
-model Admin{
-  id String @id @default(cuid())
-  email String @unique
-  username String? @unique
-  password String 
-  role Role @default(sub)
-  createdAt  DateTime @default(now())
+model Admin {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  username  String?   @unique
+  password  String
+  role      Role      @default(sub)
+  createdAt DateTime  @default(now())
+  products  Product[]
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  title       String
+  images      String[]
+  description String
+  price       Decimal
+  createdAt   DateTime @default(now())
+
+  owner   Admin  @relation(fields: [ownerId], references: [id])
+  ownerId String
 }

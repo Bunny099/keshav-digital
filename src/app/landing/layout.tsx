@@ -1,6 +1,3 @@
-
-
-// app/landing/layout.tsx
 import Navbar from "@/app/components/ui/Navbar";
 import Footer from "@/app/components/ui/Footer";
 

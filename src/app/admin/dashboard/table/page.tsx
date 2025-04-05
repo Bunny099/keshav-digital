@@ -1,8 +1,10 @@
 import InquiryTable from "@/app/components/admin/inqtable";
 export default function Inquiries() {
   return (
-    <div className="w-full p-2">
-      <InquiryTable />
-    </div>
+    <section className="min-h-screen w-full p-4 space-y-6 overflow-x-auto">
+      <div className="bg-white  p-4 rounded-lg shadow">
+        <InquiryTable />
+      </div>
+    </section>
   );
 }

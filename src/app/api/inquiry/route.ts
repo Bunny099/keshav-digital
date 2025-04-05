@@ -1,5 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 import { prisma } from "@/lib/db";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
 export async function GET() {
     try {
@@ -36,3 +38,35 @@ export async function POST(req: NextRequest) {
 
 }
 
+export async function DELETE(req: NextRequest) {
+    try {
+        const session = await getServerSession(authOptions);
+        if (!session || !session?.user.id) {
+            return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+        }
+
+        const body = await req.json();
+        const { inquiryId } = body;
+
+        if (!inquiryId || typeof inquiryId !== "number") {
+            return NextResponse.json({ error: "Invalid inquiryId!" }, { status: 400 });
+        }
+
+        const inquiry = await prisma.inquiries.findUnique({
+            where: { id: inquiryId }
+        });
+
+        if (!inquiry) {
+            return NextResponse.json({ error: "Inquiry not found!" }, { status: 404 });
+        }
+
+        await prisma.inquiries.delete({
+            where: { id: inquiryId }
+        });
+
+        return NextResponse.json({ message: "Inquiry deleted successfully!" }, { status: 200 });
+
+    } catch (error) {
+        return NextResponse.json({ error: "Failed to delete Inquiry!" }, { status: 500 });
+    }
+}

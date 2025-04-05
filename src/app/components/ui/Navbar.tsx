@@ -13,16 +13,31 @@ export default function Navbar() {
     <nav className="bg-white shadow-md relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <h1 className="text-3xl text-blue-900 font-semibold">
+          <h1
+            onClick={() => redirect("/")}
+            className="text-3xl text-blue-900 font-semibold hover:cursor-pointer"
+          >
             Keshav Digital
           </h1>
 
           <div className="hidden md:flex space-x-6 text-lg">
-            <Link href="#" className="hover:text-blue-600">
+            <Link
+              onClick={() => {
+                redirect("/");
+              }}
+              href="#"
+              className="hover:text-blue-600"
+            >
               GALLERY
             </Link>
-            <Link href="#" className="hover:text-blue-600">
-              MACHINES
+            <Link
+              onClick={() => {
+                redirect("/products");
+              }}
+              href="#"
+              className="hover:text-blue-600"
+            >
+              PRODUCTS
             </Link>
 
             <div className="relative">
@@ -36,8 +51,10 @@ export default function Navbar() {
                 <div className="absolute top-full left-0 bg-blue-50 shadow-xl rounded-md w-40 mt-2 z-50">
                   {isAdminLoginVisible && (
                     <button
-                      onClick={() => {setAdminLoginVisible(false);redirect("/admin")}}
-                    
+                      onClick={() => {
+                        setAdminLoginVisible(false);
+                        redirect("/admin");
+                      }}
                       className="block w-full text-left px-4 py-2 hover:bg-gray-200"
                     >
                       Admin Login
@@ -59,7 +76,12 @@ export default function Navbar() {
             </div>
             <div className="text-center">
               <h1 className="text-lg font-semibold">Inquiry Now</h1>
-              <p className="text-gray-500">+91 98765 43210</p>
+              <a
+                href="tel:9909897030"
+                className="text-gray-500 hover:underline"
+              >
+                +91 99098 97030
+              </a>
             </div>
           </div>
 
@@ -73,11 +95,23 @@ export default function Navbar() {
 
         {isMobileMenuOpen && (
           <div className="md:hidden space-y-2">
-            <Link href="#" className="block px-4 py-2">
+            <Link
+              onClick={() => {
+                redirect("/");
+              }}
+              href="#"
+              className="block px-4 py-2"
+            >
               GALLERY
             </Link>
-            <Link href="#" className="block px-4 py-2">
-              MACHINES
+            <Link
+              onClick={() => {
+                redirect("/products");
+              }}
+              href="#"
+              className="block px-4 py-2"
+            >
+              PRODUCTS
             </Link>
 
             <button
@@ -90,7 +124,10 @@ export default function Navbar() {
               <div className="bg-gray-100">
                 {isAdminLoginVisible && (
                   <button
-                    onClick={() => {setAdminLoginVisible(false);redirect("/admin")}}
+                    onClick={() => {
+                      setAdminLoginVisible(false);
+                      redirect("/admin");
+                    }}
                     className="block w-full text-left px-6 py-2"
                   >
                     Admin Login
@@ -110,7 +147,12 @@ export default function Navbar() {
               </div>
               <div>
                 <h1 className="text-lg font-semibold">Inquiry Now</h1>
-                <p className="text-gray-500">+91 98765 43210</p>
+                <a
+                  href="tel:9909897030"
+                  className="text-gray-500 hover:underline"
+                >
+                  +91 99098 97030
+                </a>
               </div>
             </div>
           </div>

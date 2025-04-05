@@ -20,9 +20,7 @@ export default function Hero() {
             embroidery machines. We produce high-quality fabrics designed to
             elevate your creations and fulfill your unique vision.
           </p>
-          <div className="flex justify-center lg:justify-start">
-            <Button type="primary" text="INQUIRE NOW" />
-          </div>
+          
         </div>
       </div>
 
@@ -68,9 +66,7 @@ export default function Hero() {
               description="Making exquisite textiles accessible to all through innovative technology and design."
             />
           </div>
-          <div className="flex justify-center lg:justify-start mt-2">
-            <Button text="Get In Touch" type="primary" />
-          </div>
+         
         </div>
       </div>
     </div>

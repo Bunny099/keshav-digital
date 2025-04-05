@@ -13,9 +13,9 @@ export default function Footer() {
           </p>
 
           <div className="flex space-x-4">
-            <Icons type="secondary" icon="./icons/instagram.svg" />
-            <Icons type="secondary" icon="./icons/whatsapp.svg" />
-            <Icons type="secondary" icon="./icons/fb.svg" />
+            <Icons type="secondary" icon="./icons/instagram.svg" link="https://www.instagram.com/keshav.digital?igsh=ZW82bzdqaHBrdWF2&utm_source=qr" />
+            <Icons type="secondary" icon="./icons/whatsapp.svg"  link="https://wa.me/919909897030" />
+            <Icons type="secondary" icon="./icons/fb.svg" link="https://www.facebook.com/share/16N2a1qUF8/?mibextid=wwXIfr"/>
           </div>
         </div>
 
@@ -27,11 +27,9 @@ export default function Footer() {
             <li className="font-light hover:text-blue-400 cursor-pointer">
               Home
             </li>
-            <li className="font-light hover:text-blue-400 cursor-pointer">
-              Gallery
-            </li>
-            <li className="font-light hover:text-blue-400 cursor-pointer">
-              Contact
+           
+            <li onClick={()=>redirect("/products")} className="font-light hover:text-blue-400 cursor-pointer">
+              Products
             </li>
             <li onClick={()=>redirect("/admin")} className="font-light hover:text-blue-400 cursor-pointer">
               Admin Login
@@ -44,16 +42,17 @@ export default function Footer() {
             Reach Us
           </h1>
           <div className="space-y-3 pt-4">
-            <Icons type="primary" icon="./icons/call.svg" name="9265656565" />
+            <Icons type="primary" icon="./icons/call.svg" name="9909897030" link="tel:9909897030" />
             <Icons
               type="primary"
               icon="./icons/email.svg"
-              name="keshavdigital@gmail.com"
+              name="k.digital178@gmail.com"
+              link="mailto:k.digital178@gmail.com"
             />
             <Icons
               type="primary"
               icon="./icons/location.svg"
-              name="Textile St, Surat, India"
+              name="178 HARIOM IND.2, VADOD,BAMROLI,SURAT,395023"
             />
             <Icons
               type="primary"
