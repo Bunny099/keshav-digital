@@ -62,12 +62,12 @@ const ProductCard = () => {
             className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-[1.03] flex flex-col"
             key={product.id}
           >
-            <div className="h-54 w-full bg-gray-100">
+            <div className="h-60 w-full bg-white flex justify-center items-center">
               {totalImages > 0 ? (
                 <img
                   src={product.images[currentIndex]}
                   alt={product.title}
-                  className="object-cover w-full h-full transition-all duration-300"
+                   className="object-contain w-full h-full transition-all duration-300 p-2"
                 />
               ) : (
                 <div className="w-full h-full flex justify-center items-center text-gray-800">
