@@ -5,7 +5,7 @@ interface IconsProps {
   name?: string;
   type: "primary" | "secondary";
   className?: string;
-  link?: string; // 👈 new
+  link?: string;
 }
 
 export default function Icons({ icon, name, type, className, link }: IconsProps) {
