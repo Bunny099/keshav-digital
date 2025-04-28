@@ -13,12 +13,16 @@ export default function Navbar() {
     <nav className="bg-white shadow-md relative z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
+          <div className="flex items-center gap-2">
+          <img src="./icons/logo.jpg" height={30} width={25} className="rounded-sm" />
           <h1
             onClick={() => redirect("/")}
             className="text-3xl text-blue-900 font-semibold hover:cursor-pointer"
           >
             Keshav Digital
           </h1>
+          </div>
+        
 
           <div className="hidden md:flex space-x-6 text-lg">
             <Link

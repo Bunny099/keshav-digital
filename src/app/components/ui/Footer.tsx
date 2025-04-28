@@ -6,7 +6,11 @@ export default function Footer() {
     <div className="bg-blue-950 w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-8 py-12">
         <div className="text-left">
-          <h1 className="text-3xl text-white">Keshav Digital</h1>
+         <div className="flex items-center gap-2">
+         <img src="./icons/logo.jpg" height={35} width={25} className="p-0 m-0 rounded-sm bg-blue-950" />
+         <h1 className="text-3xl text-white">Keshav Digital</h1>
+         </div>
+          
           <p className="text-white font-extralight pt-4 pb-4 leading-relaxed">
             At Keshav Digital, we specialize in textile manufacturing, creating
             high-quality clothing using advanced embroidery machines in Surat.
