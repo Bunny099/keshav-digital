@@ -86,7 +86,7 @@ export default function InquiryTable() {
                       <td className="p-4">{item.email}</td>
                       <td className="p-4">{item.mobile}</td>
                       <td className="p-4">{item.message}</td>
-                      <td className="p-4">{new Date(item.createdAt).toUTCString()}</td>
+                      <td className="p-4">{new Date(item.createdAt).toLocaleString()}</td>
                       <td className="p-4">
                         <button
                           onClick={() => deleteInquiry(item.id)}
