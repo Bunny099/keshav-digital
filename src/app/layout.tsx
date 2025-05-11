@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph:{
     title: "Keshav Digital | Premium Textile Solutions",
     description: "Leading provider of high-quality textile products and machinery. Explore our wide range of industrial textile solutions.",
-    url: "https://keshav-digital.vercel.app", 
+    url: "https://keshav-digital.vercel.app/images/kd1.png", 
     siteName: "Keshav Digital",
   },
   robots:{
@@ -55,9 +55,7 @@ export default function RootLayout({
       <body
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-       
         {children}
-        
       </body>
     </html>
   );

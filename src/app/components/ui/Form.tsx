@@ -114,11 +114,17 @@ export default function Form() {
             </label>
             <input
               className="py-2 px-3 w-full outline-none bg-blue-100 rounded-md focus:ring-2 focus:ring-blue-600"
-              onChange={(e) => setMobile(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                if(value.length <= 10){
+                  setMobile(value)
+                }
+              }}
               type="tel"
               placeholder="Enter your number"
               value={mobile}
               required
+            
             />
 
             <label className="text-base sm:text-lg font-semibold mt-4">

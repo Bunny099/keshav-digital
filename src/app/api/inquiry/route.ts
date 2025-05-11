@@ -34,8 +34,6 @@ export async function POST(req: NextRequest) {
     } catch (error) {
         return NextResponse.json({ error: "error while geting inquiries" }, { status: 500 })
     }
-
-
 }
 
 export async function DELETE(req: NextRequest) {
