@@ -32,14 +32,14 @@ export default function AddingSubAdmin() {
         error.response?.data?.error ||
           "Failed to create sub-admin. Please try again."
       );
-      console.error(error)
+      console.error(error);
     } finally {
       setLoading(false);
     }
   }
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+    <div className="max-w-lg mx-auto mt-10 p-6 bg-white  rounded-lg">
       <form className="space-y-4" onSubmit={addSubAdmin}>
         <div className="relative">
           <FiMail className="absolute left-3 top-4 text-gray-500" />
@@ -77,11 +77,9 @@ export default function AddingSubAdmin() {
           />
         </div>
 
-        {/* Status Messages */}
         {error && <p className="text-red-600 text-center">{error}</p>}
         {message && <p className="text-green-600 text-center">{message}</p>}
 
-        {/* Submit Button */}
         <button
           className="bg-black text-white w-full py-3 rounded-lg hover:bg-gray-800 transition-all disabled:opacity-50"
           type="submit"

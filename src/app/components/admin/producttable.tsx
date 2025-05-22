@@ -91,7 +91,7 @@ export default function ProductTable() {
                         {product.description}
                       </td>
                       <td className="p-4">
-                        <div className="flex justify-center gap-2">
+                        <div className="flex flex-wrap justify-center gap-2">
                           {product.images.map((img, i) => (
                             <img
                               key={i}

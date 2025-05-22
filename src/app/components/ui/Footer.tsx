@@ -6,20 +6,37 @@ export default function Footer() {
     <div className="bg-blue-950 w-full">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-8 py-12">
         <div className="text-left">
-         <div className="flex items-center gap-2">
-         <img src="./icons/logo.jpg" height={35} width={25} className="p-0 m-0 rounded-sm bg-blue-950" />
-         <h1 className="text-3xl text-white">Keshav Digital</h1>
-         </div>
-          
+          <div className="flex items-center gap-2">
+            <img
+              src="./icons/logo.jpg"
+              height={35}
+              width={25}
+              className="p-0 m-0 rounded-sm bg-blue-950"
+            />
+            <h1 className="text-3xl text-white">Keshav Digital</h1>
+          </div>
+
           <p className="text-white font-extralight pt-4 pb-4 leading-relaxed">
             At Keshav Digital, we specialize in textile manufacturing, creating
             high-quality clothing using advanced embroidery machines in Surat.
           </p>
 
           <div className="flex space-x-4">
-            <Icons type="secondary" icon="./icons/instagram.svg" link="https://www.instagram.com/keshav.digital?igsh=ZW82bzdqaHBrdWF2&utm_source=qr" />
-            <Icons type="secondary" icon="./icons/whatsapp.svg"  link="https://wa.me/919909897030" />
-            <Icons type="secondary" icon="./icons/fb.svg" link="https://www.facebook.com/share/16N2a1qUF8/?mibextid=wwXIfr"/>
+            <Icons
+              type="secondary"
+              icon="./icons/instagram.svg"
+              link="https://www.instagram.com/keshav.digital?igsh=ZW82bzdqaHBrdWF2&utm_source=qr"
+            />
+            <Icons
+              type="secondary"
+              icon="./icons/whatsapp.svg"
+              link="https://wa.me/919909897030"
+            />
+            <Icons
+              type="secondary"
+              icon="./icons/fb.svg"
+              link="https://www.facebook.com/share/16N2a1qUF8/?mibextid=wwXIfr"
+            />
           </div>
         </div>
 
@@ -31,11 +48,17 @@ export default function Footer() {
             <li className="font-light hover:text-blue-400 cursor-pointer">
               Home
             </li>
-           
-            <li onClick={()=>redirect("/products")} className="font-light hover:text-blue-400 cursor-pointer">
+
+            <li
+              onClick={() => redirect("/products")}
+              className="font-light hover:text-blue-400 cursor-pointer"
+            >
               Products
             </li>
-            <li onClick={()=>redirect("/admin")} className="font-light hover:text-blue-400 cursor-pointer">
+            <li
+              onClick={() => redirect("/admin")}
+              className="font-light hover:text-blue-400 cursor-pointer"
+            >
               Admin Login
             </li>
           </ul>
@@ -46,7 +69,12 @@ export default function Footer() {
             Reach Us
           </h1>
           <div className="space-y-3 pt-4">
-            <Icons type="primary" icon="./icons/call.svg" name="9909897030" link="tel:9909897030" />
+            <Icons
+              type="primary"
+              icon="./icons/call.svg"
+              name="9909897030"
+              link="tel:9909897030"
+            />
             <Icons
               type="primary"
               icon="./icons/email.svg"
@@ -67,9 +95,20 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center py-4 border-t border-blue-900">
+      <div className="flex justify-center items-center py-4 border-t border-blue-900 ">
         <p className="text-gray-400 text-sm text-center">
-          &copy; 2025 Keshav Digital, All Rights Reserved.
+          &copy; 2025 Keshav Digital. All rights reserved.{" "}
+          <span className="block sm:inline">
+            Developed by{" "}
+            <a
+              href="https://jayesh-five.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-300  transition"
+            >
+              Jayesh Khuman
+            </a>
+          </span>
         </p>
       </div>
     </div>

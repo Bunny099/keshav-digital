@@ -37,7 +37,7 @@ export default function SubAdminSetting() {
   }
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+    <div className="max-w-lg mx-auto mt-10 p-6 bg-white rounded-lg">
       <form className="space-y-4" onSubmit={changeCred}>
         <div className="relative">
           <FiMail className="absolute left-3 top-4 text-gray-500" />
