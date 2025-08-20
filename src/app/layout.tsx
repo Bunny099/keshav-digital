@@ -28,8 +28,19 @@ export const metadata: Metadata = {
   openGraph:{
     title: "Keshav Digital | Premium Textile Solutions",
     description: "Leading provider of high-quality textile products and machinery. Explore our wide range of industrial textile solutions.",
-    url: "https://keshav-digital.vercel.app/images/kd1.png", 
+    url: "https://keshav-digital.vercel.app/", 
     siteName: "Keshav Digital",
+    images: [
+      {
+        url: "https://keshav-digital.vercel.app/images/kd1.png",
+        width: 1200,
+        height: 630,
+        alt: "Keshav Digital Website Preview",
+        type: "image/jpeg",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
   robots:{
     index:true,
