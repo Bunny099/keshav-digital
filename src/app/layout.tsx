@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Keshav digital",
   description: "Keshav Digital offers high-quality textile products, advanced machinery, and tailored solutions for modern industries. Contact us for custom orders and inquiries.",
   keywords: ["Textile Solutions", "Textile Machinery", "Custom Fabrics", "Keshav Digital", "Industrial Textiles", "Fabric Manufacturing"],
-  authors: [{ name: "Keshav Digital" }],
+  authors: [{ name: "Keshav Digital" , url:"https://keshav-digital.vercel.app" }],
   creator: "Keshav Digital",
   publisher: "Keshav Digital",
   icons: {
