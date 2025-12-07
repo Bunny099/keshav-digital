@@ -13,7 +13,7 @@
     "@types/bcryptjs": "^3.0.0",
     "axios": "^1.8.4",
     "bcryptjs": "^3.0.2",
-    "next": "15.2.3",
+    "next": "15.2.6",
     "next-auth": "^4.24.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
